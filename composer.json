@@ -1,0 +1,17 @@
+{
+    "name": "daanvanberkel/laravel_accounting",
+    "description": "Laravel accounting",
+    "type": "library",
+    "authors": [
+        {
+            "name": "Daan van Berkel",
+            "email": "info@daanvanberkel.nl"
+        }
+    ],
+    "require": {},
+    "autoload": {
+        "psr-4": {
+            "Dvb\\Accounting\\": "src/"
+        }
+    }
+}
