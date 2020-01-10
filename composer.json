@@ -8,7 +8,9 @@
             "email": "info@daanvanberkel.nl"
         }
     ],
-    "require": {},
+    "require": {
+        "php": "^7.4"
+    },
     "autoload": {
         "psr-4": {
             "Dvb\\Accounting\\": "src/"
