@@ -19,12 +19,11 @@ class AccountingLedger {
     /**
      * @param int $id
      * @return AccountingLedger
-     * @throws AccountingException
      */
     public function setId(int $id): AccountingLedger
     {
         if ($id < 0) {
-            throw new AccountingException("Id must be a positive integer");
+            return $this;
         }
 
         $this->id = $id;
