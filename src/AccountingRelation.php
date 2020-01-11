@@ -266,6 +266,11 @@ class AccountingRelation {
      */
     public function setEmail(?string $email): AccountingRelation
     {
+        if (empty($email)) {
+            $this->email = null;
+            return $this;
+        }
+
         if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
             throw new AccountingException("Email must be a valid emailaddress");
         }
@@ -289,6 +294,11 @@ class AccountingRelation {
      */
     public function setSite(?string $site): AccountingRelation
     {
+        if (empty($site)) {
+            $this->site = null;
+            return $this;
+        }
+
         if (!filter_var($site, FILTER_VALIDATE_URL)) {
             throw new AccountingException("Site must be a valid URL");
         }
