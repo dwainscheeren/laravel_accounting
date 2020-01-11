@@ -4,20 +4,9 @@ namespace Dvb\Accounting;
 use DateTime;
 
 class MutationFilter {
-    /**
-     * @var int
-     */
-    private $mutation_number = 0;
-
-    /**
-     * @var null|DateTime
-     */
-    private $date_from = null;
-
-    /**
-     * @var null|DateTime
-     */
-    private $date_to = null;
+    protected int $mutation_number = 0;
+    protected ?DateTime $date_from = null;
+    protected ?DateTime $date_to = null;
 
     /**
      * @return int

@@ -4,15 +4,15 @@ namespace Dvb\Accounting;
 use DateTime;
 
 class AccountingMutation {
-    protected int $number;
-    protected string $kind;
-    protected DateTime $date;
-    protected string $ledger_code;
-    protected ?string $relation_code;
-    protected ?string $invoice_number;
-    protected string $description;
-    protected ?int $payment_term;
-    protected array $lines;
+    protected int $number = 0;
+    protected string $kind = '';
+    protected ?DateTime $date = null;
+    protected string $ledger_code = '';
+    protected ?string $relation_code = null;
+    protected ?string $invoice_number = null;
+    protected string $description = '';
+    protected ?int $payment_term = null;
+    protected array $lines = [];
 
     /**
      * @return int
@@ -51,18 +51,18 @@ class AccountingMutation {
     }
 
     /**
-     * @return DateTime
+     * @return DateTime|null
      */
-    public function getDate(): DateTime
+    public function getDate(): ?DateTime
     {
         return $this->date;
     }
 
     /**
-     * @param DateTime $date
+     * @param DateTime|null $date
      * @return AccountingMutation
      */
-    public function setDate(DateTime $date): AccountingMutation
+    public function setDate(?DateTime $date): AccountingMutation
     {
         $this->date = $date;
         return $this;

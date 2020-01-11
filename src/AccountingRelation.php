@@ -2,22 +2,22 @@
 namespace Dvb\Accounting;
 
 class AccountingRelation {
-    protected ?int $id;
-    protected ?\DateTime $add_date;
-    protected int $code;
-    protected string $company;
-    protected ?string $contact;
-    protected ?string $gender;
-    protected ?string $address;
-    protected ?string $zipcode;
-    protected ?string $city;
-    protected ?string $country;
-    protected ?string $phone;
-    protected ?string $cell_phone;
-    protected ?string $email;
-    protected ?string $site;
-    protected ?string $notes;
-    protected ?string $vat_number;
+    protected ?int $id = null;
+    protected ?\DateTime $add_date = null;
+    protected int $code = 0;
+    protected string $company = '';
+    protected ?string $contact = null;
+    protected ?string $gender = null;
+    protected ?string $address = null;
+    protected ?string $zipcode = null;
+    protected ?string $city = null;
+    protected ?string $country = null;
+    protected ?string $phone = null;
+    protected ?string $cell_phone = null;
+    protected ?string $email = null;
+    protected ?string $site = null;
+    protected ?string $notes = null;
+    protected ?string $vat_number = null;
 
     /**
      * @return int|null

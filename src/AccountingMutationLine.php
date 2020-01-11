@@ -5,11 +5,11 @@ class AccountingMutationLine {
     /**
      * @var float   The line amount without tax
      */
-    protected float $amount;
-    protected string $vat_code;
-    protected float $vat_percentage;
-    protected ?string $invoice_number;
-    protected ?string $ledger_code;
+    protected float $amount = 0;
+    protected string $vat_code = '';
+    protected float $vat_percentage = 0;
+    protected ?string $invoice_number = null;
+    protected ?string $ledger_code = null;
 
     /**
      * @return float

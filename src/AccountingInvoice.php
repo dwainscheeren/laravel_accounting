@@ -4,12 +4,12 @@ namespace Dvb\Accounting;
 use DateTime;
 
 class AccountingInvoice {
-    protected string $invoice_number;
-    protected string $relation_code;
-    protected DateTime $date;
-    protected int $payment_term;
-    protected string $description;
-    protected array $lines;
+    protected string $invoice_number = '';
+    protected string $relation_code = '';
+    protected ?DateTime $date = null;
+    protected int $payment_term = 0;
+    protected string $description = '';
+    protected array $lines = [];
 
     /**
      * @return string
@@ -48,18 +48,18 @@ class AccountingInvoice {
     }
 
     /**
-     * @return DateTime
+     * @return DateTime|null
      */
-    public function getDate(): DateTime
+    public function getDate(): ?DateTime
     {
         return $this->date;
     }
 
     /**
-     * @param DateTime $date
+     * @param DateTime|null $date
      * @return AccountingInvoice
      */
-    public function setDate(DateTime $date): AccountingInvoice
+    public function setDate(?DateTime $date): AccountingInvoice
     {
         $this->date = $date;
         return $this;

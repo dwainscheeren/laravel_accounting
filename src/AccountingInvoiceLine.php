@@ -4,11 +4,11 @@ namespace Dvb\Accounting;
 class AccountingInvoiceLine {
     protected float $amount = 0;
     protected string $unit = 'piece';
-    protected string $code;
-    protected string $description;
-    protected float $price;
-    protected string $tax_code;
-    protected string $ledger_code;
+    protected string $code = '';
+    protected string $description = '';
+    protected float $price = 0;
+    protected string $tax_code = '';
+    protected string $ledger_code = '';
 
     /**
      * @return float

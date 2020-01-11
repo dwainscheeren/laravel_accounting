@@ -2,11 +2,11 @@
 namespace Dvb\Accounting;
 
 class AccountingLedger {
-    protected int $id;
-    protected string $code;
-    protected string $description;
-    protected string $category;
-    protected string $group;
+    protected int $id = 0;
+    protected string $code = '';
+    protected string $description = '';
+    protected string $category = '';
+    protected string $group = '';
 
     /**
      * @return int
