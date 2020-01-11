@@ -2,6 +2,7 @@
     "name": "daanvanberkel/laravel_accounting",
     "description": "Laravel accounting",
     "type": "library",
+    "license": "MIT",
     "authors": [
         {
             "name": "Daan van Berkel",
