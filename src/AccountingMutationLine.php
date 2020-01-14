@@ -3,7 +3,7 @@ namespace Dvb\Accounting;
 
 class AccountingMutationLine {
     /**
-     * @var float   The line amount without tax
+     * @var float   The line amount without vat
      */
     protected float $amount = 0;
     protected string $vat_code = '';
@@ -12,6 +12,7 @@ class AccountingMutationLine {
     protected ?string $ledger_code = null;
 
     /**
+     * Get the amount without vat
      * @return float
      */
     public function getAmount(): float

@@ -201,4 +201,28 @@ class AccountingMutation {
         $this->lines = $lines;
         return $this;
     }
+
+    /**
+     * Get total line amount without vat
+     * @return float
+     */
+    public function getAmountWithoutVat(): float {
+        if (empty($this->lines)) {
+            return 0;
+        }
+
+        return array_sum(array_map(fn($line) => $line->getAmount(), $this->lines));
+    }
+
+    /**
+     * Get total line vat amount
+     * @return float
+     */
+    public function getVatAmount(): float {
+        if (empty($this->lines)) {
+            return 0;
+        }
+
+        return array_sum(array_map(fn($line) => ($line->getAmount() / 100) * $line->getVatPercentage(), $this->lines));
+    }
 }
