@@ -4,7 +4,7 @@ namespace Dvb\Accounting;
 class AccountingRelation {
     protected ?int $id = null;
     protected ?\DateTime $add_date = null;
-    protected int $code = 0;
+    protected $code = 0;
     protected string $company = '';
     protected ?string $contact = null;
     protected ?string $gender = null;
@@ -22,7 +22,7 @@ class AccountingRelation {
     /**
      * @return int|null
      */
-    public function getId(): ?int
+    public function getId()
     {
         return $this->id;
     }
@@ -32,7 +32,7 @@ class AccountingRelation {
      * @return AccountingRelation
      * @throws AccountingException
      */
-    public function setId(?int $id): AccountingRelation
+    public function setId($id): AccountingRelation
     {
         if ($id < 0) {
             throw new AccountingException("Id must be a positive integer");
@@ -63,7 +63,7 @@ class AccountingRelation {
     /**
      * @return int
      */
-    public function getCode(): int
+    public function getCode()
     {
         return $this->code;
     }
@@ -73,7 +73,7 @@ class AccountingRelation {
      * @return AccountingRelation
      * @throws AccountingException
      */
-    public function setCode(int $code): AccountingRelation
+    public function setCode($code)
     {
         if ($code < 0) {
             throw new AccountingException("Code must be a positive integer.");
