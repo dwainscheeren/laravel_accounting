@@ -5,12 +5,12 @@ interface AccountingProvider {
     /**
      * @return AccountingRelation[]
      */
-    public function getRelations(): array;
+    #public function getRelations(): array;
 
     /**
      * @return AccountingLedger[]
      */
-    public function getLedgers(): array;
+    #public function getLedgers(): array;
 
     /**
      * @param MutationFilter|null $filter
