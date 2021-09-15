@@ -6,11 +6,15 @@ class AccountingMutationLine {
      * @var float   The line amount without vat
      */
     protected float $amount = 0;
+    protected float $amount_excl_vat = 0.0;
+    protected float $vat_amount = 0.0;
+    protected float $amount_incl_vat = 0.0;
     protected string $vat_code = '';
     protected float $vat_percentage = 0;
     protected ?string $invoice_number = null;
     protected ?string $ledger_code = null;
-
+    protected int $cost_placement_id = 0;
+    
     /**
      * Get the amount without vat
      * @return float
@@ -27,6 +31,67 @@ class AccountingMutationLine {
     public function setAmount(float $amount): AccountingMutationLine
     {
         $this->amount = $amount;
+        return $this;
+    }
+
+
+    /**
+     * Get the amount without vat
+     * @return float
+     */
+    public function getAmountExclVat(): float
+    {
+        return $this->amount_excl_vat;
+    }
+
+    /**
+     * @param float $amount_excl_vat
+     * @return EboekhoudenMutationLine
+     */
+    public function setAmountExclVat(float $amount_excl_vat): AccountingMutationLine
+    {
+        $this->amount_excl_vat = $amount_excl_vat;
+
+        return $this;
+    }
+
+    /**
+     * Get the amount without vat
+     * @return float
+     */
+    public function getVatAmount(): float
+    {
+        return $this->vat_amount;
+    }
+
+    /**
+     * @param float $vat_amount
+     * @return EboekhoudenMutationLine
+     */
+    public function setVatAmount(float $vat_amount): AccountingMutationLine
+    {
+        $this->vat_amount = $vat_amount;
+
+        return $this;
+    }
+
+    /**
+     * Get the amount without vat
+     * @return float
+     */
+    public function getAmountInclVat(): float
+    {
+        return $this->amount_incl_vat;
+    }
+
+    /**
+     * @param float $amount_incl_vat
+     * @return EboekhoudenMutationLine
+     */
+    public function setAmountInclVat(float $amount_incl_vat): AccountingMutationLine
+    {
+        $this->amount_incl_vat = $amount_incl_vat;
+
         return $this;
     }
 
@@ -99,6 +164,25 @@ class AccountingMutationLine {
     public function setLedgerCode(?string $ledger_code): AccountingMutationLine
     {
         $this->ledger_code = $ledger_code;
+        return $this;
+    }
+
+    /**
+     * @return int
+     */
+    public function getCostPlacementId(): int
+    {
+        return $this->cost_placement_id;
+    }
+
+    /**
+     * @param int $cost_placement_id
+     * @return EboekhoudenMutationLine
+     */
+    public function setCostPlacementId(int $cost_placement_id): AccountingMutationLine
+    {
+        $this->cost_placement_id = $cost_placement_id;
+
         return $this;
     }
 }
