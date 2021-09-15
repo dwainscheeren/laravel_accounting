@@ -10,7 +10,9 @@ class AccountingMutation {
     protected string $ledger_code = '';
     protected ?string $relation_code = null;
     protected ?string $invoice_number = null;
+    protected string $journal = '';
     protected string $description = '';
+    protected string $in_or_ex_vat = 'EX';
     protected ?int $payment_term = null;
     protected array $lines = [];
 
@@ -29,6 +31,44 @@ class AccountingMutation {
     public function setNumber(int $number): AccountingMutation
     {
         $this->number = $number;
+        return $this;
+    }
+
+    /**
+     * @return string
+     */
+    public function getJournal(): string
+    {
+        return $this->journal;
+    }
+
+    /**
+     * @param string $journal
+     * @return EboekhoudenMutation
+     */
+    public function setJournal(string $journal): AccountingMutation
+    {
+        $this->journal = $journal;
+
+        return $this;
+    }
+
+    /**
+     * @return string
+     */
+    public function getInOrExVat(): string
+    {
+        return $this->in_or_ex_vat;
+    }
+
+    /**
+     * @param string $in_or_ex_vat
+     * @return EboekhoudenMutation
+     */
+    public function setInOrExVat(string $in_or_ex_vat): AccountingMutation
+    {
+        $this->in_or_ex_vat = $in_or_ex_vat;
+
         return $this;
     }
 
